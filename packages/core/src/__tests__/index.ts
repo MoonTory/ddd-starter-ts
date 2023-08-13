@@ -1,11 +1,11 @@
-import app from '@/index';
+import { MicroApp } from '@/app';
 import supertest from 'supertest';
 
 describe('app', () => {
   let request: any;
 
   beforeEach(() => {
-    request = supertest(app);
+    request = supertest(new MicroApp().express);
   });
 
   it('should return a successful response for GET /', (done) => {

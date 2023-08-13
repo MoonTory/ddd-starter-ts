@@ -1,13 +1,13 @@
 import path from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 import NodeExternals from 'webpack-node-externals';
 import WebpackShellPlugin from 'webpack-shell-plugin-next';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import TSConfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const { NODE_ENV = 'production' } = process.env;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/bin/index.ts',
   mode: NODE_ENV,
   target: 'node',
   output: {
@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     plugins: [
-      new TsconfigPathsPlugin({
+      new TSConfigPathsPlugin({
         configFile: path.resolve(__dirname, 'tsconfig.json')
       })
     ]
@@ -38,4 +38,4 @@ module.exports = {
       onBuildEnd: 'yarn run:dev'
     })
   ]
-} as webpack.Configuration;
+} as Configuration;
