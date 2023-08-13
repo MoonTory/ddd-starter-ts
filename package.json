@@ -1,0 +1,11 @@
+{
+  "name": "ddd-starter-ts",
+  "version": "1.0.0",
+  "repository": "git@github.com:MoonTory/ddd-starter-ts.git",
+  "author": "Gustavo Quinta | MoonTory <gustavoqnt40@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
